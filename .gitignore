@@ -22,3 +22,18 @@
 
 # PaaS authentication file
 Staticfile.auth
+
+# Py
+*.pyc
+*.pyo
+logs
+dist
+build
+*.egg-info*
+.build
+*.db
+*.sqlite3
+.pytest
+.coverage
+migrations
+*geckodriver.*

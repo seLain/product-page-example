@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Example</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="{% static 'css/screen.css' %}" rel="stylesheet">
+    <!-- <link href="{% static 'css/print.css' %}" rel="stylesheet"> -->
+    <link href="{% static 'css/fonts.css' %}" rel="stylesheet">
+    {% block css_content %}
+    {% endblock %}
+</head>
+
+<body>
+  
+  <header class="header header--without-border">
+      <div class="header__container">
+        <div class="header__brand">
+          <a href="/" data-click-events="" data-click-category="Header" data-click-action="Logo clicked">
+            <span class="govuk-logo">
+              <img class="govuk-logo__printable-crown" src="/static/images/gov.uk_logotype_crown_invert_trans.png" height="32" width="36">
+              GOV.UK
+            </span>
+            <span class="header__title">
+              Pay
+              <span class="phase-banner">Beta</span>
+            </span>
+          </a>
+        </div>
+
+        <input class="header__navigation-toggle-checkbox" type="checkbox" id="show-menu" aria-controls="navigation" aria-expanded="false">
+        <label class="header__navigation-toggle" for="show-menu">
+          Menu
+        </label>
+
+        <nav id="navigation" class="header__navigation" aria-label="Top Level Navigation" aria-hidden="true" data-click-events="" data-click-category="Header" data-click-action="Navigation link clicked">
+          <ul>
+              <li class="active">
+                <a href="#main">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="/getstarted/">
+                  Get started
+                </a>
+              </li>
+              <li>
+                <a href="https://docs.payments.service.gov.uk">
+                  Documentation
+                </a>
+              </li>
+              <li>
+                <a href="/support/">
+                  Support
+                </a>
+              </li>
+              <li>
+                <a href="https://selfservice.payments.service.gov.uk/login">
+                  Sign in
+                </a>
+              </li>
+          </ul>
+        </nav>
+      </div>
+  </header>
+
+
+  <div class="wrap">
+    <div class="page-wrap clear-top">
+      {% block page_content %}
+
+      {% endblock %}
+    </div>
+  </div>
+
+  <script src="{% static 'js/application.js' %}"></script>
+  <script src="{% static 'js/start-modules.js' %}"></script>
+  {% block javascript_content %}
+  {% endblock %}
+
+</body>
+</html>
